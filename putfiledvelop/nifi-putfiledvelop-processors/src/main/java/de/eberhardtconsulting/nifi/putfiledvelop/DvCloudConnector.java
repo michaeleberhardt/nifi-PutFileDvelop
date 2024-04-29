@@ -110,6 +110,9 @@ public class DvCloudConnector {
 		return false;
 	}
 
+	/*
+	 * ToDo: Implement possibility to split single file in multiple chunks.
+	 */
 	public String uploadChunk(String sourceCategoryId, byte[] buf) throws URISyntaxException {		  
 		String uri = this.baseUri + "/dms/r/" + this.repoId + "/blob/chunk/";
 		log.info("uploadChunk BEGIN");
@@ -121,7 +124,6 @@ public class DvCloudConnector {
 			  .newBuilder()
 			  .uri(URI.create(uri))
 			  .POST(HttpRequest.BodyPublishers.ofByteArray(buf))
-			  //.POST(HttpRequest.BodyPublishers.ofFile(Paths.get("c:\\temp\\38672.pdf")))
 			  .header("Accept", "*/*")
 			  .header("Authorization", auth)
 			  .header("Content-Type","text/plain")
