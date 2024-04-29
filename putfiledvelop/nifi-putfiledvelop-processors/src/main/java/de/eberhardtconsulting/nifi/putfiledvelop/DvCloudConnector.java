@@ -111,7 +111,7 @@ public class DvCloudConnector {
 	}
 
 	/*
-	 * ToDo: Implement possibility to split single file in multiple chunks.
+	 * ToDo: Implement possibility to split single file in multiple chunks. 
 	 */
 	public String uploadChunk(String sourceCategoryId, byte[] buf) throws URISyntaxException {		  
 		String uri = this.baseUri + "/dms/r/" + this.repoId + "/blob/chunk/";
